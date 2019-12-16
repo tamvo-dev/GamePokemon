@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 public class Utils {
 
     public static final int DEFAULT = -1;
-    private static final String URL = "C:\\Users\\LAptop\\eclipse-workspace\\GamePikachu\\images\\";
+    private static final String URL = "C:\\Users\\LAptop\\IdeaProjects\\GamePokemon\\images\\";
 
     public static ImageView getImage(int position) throws IOException {
         if(position >= 0 && position < 10) {
