@@ -50,28 +50,54 @@ public class GameManagerLogic {
         mPoints.clear();
 
         if(a.getIconID() == b.getIconID() && mRules.checkRules(p1, p2)) {
-            a.setDisableCard();
-            b.setDisableCard();
+            twoCardsTrue(a, b);
+
         } else {
-            Thread thread = new Thread(new Runnable() {
-
-                public void run() {
-                    try {
-                        Thread.sleep(200);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    Platform.runLater(new Runnable() {
-                        public void run() {
-                            a.setDefaultStatus();
-                            b.setDefaultStatus();
-                        }
-                    });
-                }
-            });
-
-            thread.start();
+            twoCardsFalse(a, b);
         }
+
+    }
+
+    private void twoCardsFalse(Card a, Card b){
+        Thread thread = new Thread(new Runnable() {
+
+            public void run() {
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(new Runnable() {
+                    public void run() {
+                        a.setDefaultStatus();
+                        b.setDefaultStatus();
+                    }
+                });
+            }
+        });
+
+        thread.start();
+    }
+
+    private void twoCardsTrue(Card a, Card b){
+        Thread thread = new Thread(new Runnable() {
+
+            public void run() {
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Platform.runLater(new Runnable() {
+                    public void run() {
+                        a.setDisableCard();
+                        b.setDisableCard();
+                    }
+                });
+            }
+        });
+
+        thread.start();
     }
 
 }

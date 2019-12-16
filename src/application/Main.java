@@ -1,10 +1,6 @@
 package application;
 
-
-
 import java.util.Random;
-import java.util.Timer;
-
 import controll.GameManager;
 import controll.GameManagerLogic;
 import controll.UpdateTime;
