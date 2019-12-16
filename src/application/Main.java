@@ -110,7 +110,7 @@ public class Main extends Application implements UpdateTime {
     private void onStartGame() {
 
         // Add play sound
-        //mPlaySound = new PlaySound();
+        mPlaySound = new PlaySound();
 
         mScore = 120;
         BorderPane root = new BorderPane();

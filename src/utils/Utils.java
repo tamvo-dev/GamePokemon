@@ -10,12 +10,13 @@ import javafx.scene.image.ImageView;
 public class Utils {
 
     public static final int DEFAULT = -1;
-    private static final String URL = "C:\\Users\\LAptop\\IdeaProjects\\GamePokemon\\images\\";
 
     public static Image getBackGround(){
+
         FileInputStream input = null;
         try {
-            input = new FileInputStream(URL + "background.jpg");
+
+            input = new FileInputStream("src\\images\\background.jpg");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -25,14 +26,14 @@ public class Utils {
 
     public static ImageView getImage(int position) throws IOException {
         if(position >= 0 && position < 10) {
-            FileInputStream input = new FileInputStream(URL + position + ".png");
+
+            FileInputStream input = new FileInputStream("src\\images\\" + position + ".png");
             Image image = new Image(input);
             ImageView imageView = new ImageView(image);
-            //ImageView imageView = new ImageView(URL + position + ".png");
             return imageView;
         }
 
-        FileInputStream input = new FileInputStream(URL + "default.png");
+        FileInputStream input = new FileInputStream( "src\\images\\default.png");
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);
         return imageView;
