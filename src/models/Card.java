@@ -14,9 +14,9 @@ public class Card extends Button {
     public static final int HEIGHT = 72;
 
     private ImageView icon;
-    private int iconID;
     private ImageView iconDefault;
     private int time;
+    private int iconID;
     private boolean isActive = false;
 
     public Card(int iconID, int time) {

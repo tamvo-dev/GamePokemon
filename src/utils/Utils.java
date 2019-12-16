@@ -1,6 +1,7 @@
 package utils;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javafx.scene.image.Image;
@@ -10,6 +11,17 @@ public class Utils {
 
     public static final int DEFAULT = -1;
     private static final String URL = "C:\\Users\\LAptop\\IdeaProjects\\GamePokemon\\images\\";
+
+    public static Image getBackGround(){
+        FileInputStream input = null;
+        try {
+            input = new FileInputStream(URL + "background.jpg");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image image = new Image(input);
+        return image;
+    }
 
     public static ImageView getImage(int position) throws IOException {
         if(position >= 0 && position < 10) {

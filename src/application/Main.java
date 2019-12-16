@@ -7,19 +7,20 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import models.Card;
+import utils.Utils;
 
-public class Main extends Application implements UpdateTime, GameManager {
+public class Main extends Application implements UpdateTime {
 
     public static final int WIDTH = 800;
     public static final int HEIGHT = 600;
@@ -113,7 +114,14 @@ public class Main extends Application implements UpdateTime, GameManager {
 
         mScore = 120;
         BorderPane root = new BorderPane();
-        mGameManagerLogic = new GameManagerLogic(this);
+        BackgroundImage backgroundImage =  new BackgroundImage(Utils.getBackGround(),
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background background = new Background(backgroundImage);
+        root.setBackground(background);
+        mGameManagerLogic = new GameManagerLogic();
 
         iconID = new int[20];
         for (int i = 0; i < 20; i++) {
@@ -143,6 +151,9 @@ public class Main extends Application implements UpdateTime, GameManager {
                     public void handle(ActionEvent event) {
                         if (mCards[x][y].getActive() == false) {
                             mGameManagerLogic.selectCard(mCards[x][y], x, y);
+                            // Ckeck win
+                            checkWin();
+
                         }
                     }
                 });
@@ -224,21 +235,59 @@ public class Main extends Application implements UpdateTime, GameManager {
         }
     }
 
-    public void onWinGame(){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText(null);
-        alert.setTitle("Messenger");
-        String level;
-        if (mTime == 1000){
-            level = "Advance";
-        } else if(mTime == 2000){
-            level = "Medium";
-        } else {
-            level= "Easy";
+    public void checkWin(){
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if (isWin()){
+                    onWinGame();
+                }
+            }
+        });
+
+        thread.start();
+    }
+
+    public boolean isWin(){
+
+        for (int i=0;i<5;i++){
+            for(int j=0;j<4;j++){
+                if (mCards[i][j].isDisable() == false){
+                    return false;
+                }
+            }
         }
-        String content = "Your score: " + mScore + "\nLevel: " + level;
-        alert.setContentText(content);
-        alert.showAndWait();
+
+        return true;
+    }
+
+    public void onWinGame(){
+        Platform.runLater(new Runnable() {
+            public void run() {
+                mTimeLogic.stop();
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("Messenger");
+                String level;
+                if (mTime == 1000){
+                    level = "Advance";
+                } else if(mTime == 2000){
+                    level = "Medium";
+                } else {
+                    level= "Easy";
+                }
+                String content = "Your score: " + mScore + "\nLevel: " + level;
+                alert.setContentText(content);
+                alert.showAndWait();
+            }
+        });
+
     }
 
     public void onEndTime() {

@@ -5,20 +5,13 @@ import java.util.List;
 
 import javafx.application.Platform;
 import models.Card;
-import models.Point;
 
 public class GameManagerLogic {
 
-    private GameManager mGameManager;
     private List<Card> mCards;
-    private List<Point> mPoints;
-    private Rules mRules;
 
-    public GameManagerLogic(GameManager mGameManager) {
-        this.mGameManager = mGameManager;
+    public GameManagerLogic() { ;
         mCards = new ArrayList<Card>();
-        mPoints = new ArrayList<Point>();
-        mRules = new Rules();
 
     }
 
@@ -26,7 +19,6 @@ public class GameManagerLogic {
         card.changeStatus();
 
         mCards.add(card);
-        mPoints.add(new Point(x, y));
 
         if(mCards.size() == 2) {
             checkPoints();
@@ -39,21 +31,13 @@ public class GameManagerLogic {
         final Card b = mCards.get(1);
         if(a.getActive() == false) {
             mCards.remove(0);
-            mPoints.remove(0);
             return;
         }
 
-        Point p1 = mPoints.get(0);
-        Point p2 = mPoints.get(1);
-
         mCards.clear();
-        mPoints.clear();
 
-        if(a.getIconID() == b.getIconID() && mRules.checkRules(p1, p2)) {
+        if(a.getIconID() == b.getIconID()) {
             twoCardsTrue(a, b);
-            if (mRules.isWin()){
-                mGameManager.onWinGame();
-            }
         } else {
             twoCardsFalse(a, b);
         }
