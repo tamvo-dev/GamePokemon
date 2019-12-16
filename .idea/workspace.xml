@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controll/PlaySound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GamePokemon/application/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GamePokemon/application/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GamePokemon/application/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GamePokemon/application/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GamePokemon/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GamePokemon/application/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GamePokemon/controll/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GamePokemon/controll/GameManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GamePokemon/controll/UpdateTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GamePokemon/controll/UpdateTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GamePokemon/controll/UpdateTimeLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GamePokemon/controll/UpdateTimeLogic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controll/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controll/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controll/GameManagerLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controll/GameManagerLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controll/Rules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controll/Rules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controll/UpdateTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controll/UpdateTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controll/UpdateTimeLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controll/UpdateTimeLogic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,22 +241,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="389" y="108" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576479669593" />
-    <state width="1323" height="249" key="GridCell.Tab.0.bottom" timestamp="1576480707084">
+    <state width="1323" height="116" key="GridCell.Tab.0.bottom" timestamp="1576491588990">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="249" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576480707084" />
-    <state width="1323" height="249" key="GridCell.Tab.0.center" timestamp="1576480707084">
+    <state width="1323" height="116" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576491588990" />
+    <state width="1323" height="116" key="GridCell.Tab.0.center" timestamp="1576491588990">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="249" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576480707084" />
-    <state width="1323" height="249" key="GridCell.Tab.0.left" timestamp="1576480707084">
+    <state width="1323" height="116" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576491588990" />
+    <state width="1323" height="116" key="GridCell.Tab.0.left" timestamp="1576491588989">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="249" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576480707084" />
-    <state width="1323" height="249" key="GridCell.Tab.0.right" timestamp="1576480707084">
+    <state width="1323" height="116" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576491588989" />
+    <state width="1323" height="116" key="GridCell.Tab.0.right" timestamp="1576491588990">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="249" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576480707084" />
+    <state width="1323" height="116" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576491588990" />
+    <state width="1323" height="234" key="GridCell.Tab.1.bottom" timestamp="1576487597179">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="234" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576487597179" />
+    <state width="1323" height="234" key="GridCell.Tab.1.center" timestamp="1576487597179">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="234" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576487597179" />
+    <state width="1323" height="234" key="GridCell.Tab.1.left" timestamp="1576487597179">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="234" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576487597179" />
+    <state width="1323" height="234" key="GridCell.Tab.1.right" timestamp="1576487597179">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="234" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576487597179" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1576479905553">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

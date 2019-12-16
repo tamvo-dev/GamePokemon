@@ -51,7 +51,9 @@ public class GameManagerLogic {
 
         if(a.getIconID() == b.getIconID() && mRules.checkRules(p1, p2)) {
             twoCardsTrue(a, b);
-
+            if (mRules.isWin()){
+                mGameManager.onWinGame();
+            }
         } else {
             twoCardsFalse(a, b);
         }

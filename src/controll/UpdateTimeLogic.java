@@ -19,7 +19,7 @@ public class UpdateTimeLogic extends Thread  {
             mUpdateTime.onUpdateTime(time);
 
             try {
-                Thread.sleep(100);
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -28,6 +28,7 @@ public class UpdateTimeLogic extends Thread  {
             if(mHundredth < 0) {
                 mHundredth = 99;
                 mCurrentSecond--;
+                mUpdateTime.onUpdateScore();
             }
             if(mCurrentSecond < 0) {
                 mCurrentSecond = 59;

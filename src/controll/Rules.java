@@ -16,6 +16,15 @@ public class Rules {
         }
     }
 
+    public boolean isWin(){
+        for(int i=0; i<5;i++) {
+            for(int j=0;j<4;j++) {
+                if (mArrLable[i][j] == 1)
+                    return false;
+            }
+        }
+        return true;
+    }
 
     public boolean checkRules(Point p1, Point p2) {
 
