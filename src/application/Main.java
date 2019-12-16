@@ -181,10 +181,10 @@ public class Main extends Application implements UpdateTime {
         Button btnSound = new Button("Sound off");
         btnSound.setMinSize(width, height);
         btnSound.setWrapText(true);
-//        btnSound.setOnAction(actionEvent -> {
-//           String status = mPlaySound.changeStatus();
-//           btnSound.setText(status);
-//        });
+        btnSound.setOnAction(actionEvent -> {
+           String status = mPlaySound.changeStatus();
+           btnSound.setText(status);
+        });
         right.getChildren().add(btnSound);
 
         Button btnAgain = new Button("Play Again");

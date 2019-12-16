@@ -20,10 +20,11 @@ public class PlaySound {
 
     public PlaySound(){
         status = false;
+
         String path = new File("src\\audio\\sound.mp3").getAbsolutePath();
-        System.out.println(path);
         mMedia = new Media(new File(path).toURI().toString());
         mMediaPlayer = new MediaPlayer(mMedia);
+
     }
 
     public String changeStatus(){
